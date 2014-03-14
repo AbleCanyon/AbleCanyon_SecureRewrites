@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AbleCanyon_SecureRewrite>
+            <version>1.0.0</version>
+        </AbleCanyon_SecureRewrite>
+    </modules>
+    <global>
+        <models>
+            <ablecanyon_securerewrite>
+                <class>AbleCanyon_SecureRewrite_Model</class>
+            </ablecanyon_securerewrite>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_predispatch_catalog_product_view>
+                <observers>
+                    <product_unsecure_rewrite>
+                        <class>ablecanyon_securerewrite/observer</class>
+                        <method>unsecureRewrite</method>
+                    </product_unsecure_rewrite>
+                </observers>
+            </controller_action_predispatch_catalog_product_view>
+            <controller_action_predispatch_catalog_category_view>
+                <observers>
+                    <category_unsecure_rewrite>
+                        <class>ablecanyon_securerewrite/observer</class>
+                        <method>unsecureRewrite</method>
+                    </category_unsecure_rewrite>
+                </observers>
+            </controller_action_predispatch_catalog_category_view>
+        </events>
+    </frontend>
+</config>
