@@ -14,6 +14,22 @@
     </global>
     <frontend>
         <events>
+            <controller_action_predispatch_cms_index_index>
+                <observers>
+                    <product_unsecure_rewrite>
+                        <class>ablecanyon_securerewrite/observer</class>
+                        <method>unsecureRewrite</method>
+                    </product_unsecure_rewrite>
+                </observers>
+            </controller_action_predispatch_cms_index_index>
+            <controller_action_predispatch_cms_page_view>
+                <observers>
+                    <product_unsecure_rewrite>
+                        <class>ablecanyon_securerewrite/observer</class>
+                        <method>unsecureRewrite</method>
+                    </product_unsecure_rewrite>
+                </observers>
+            </controller_action_predispatch_cms_page_view>
             <controller_action_predispatch_catalog_product_view>
                 <observers>
                     <product_unsecure_rewrite>
