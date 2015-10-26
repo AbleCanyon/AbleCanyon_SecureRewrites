@@ -14,7 +14,7 @@ class AbleCanyon_SecureRewrite_Model_Observer
         $request = $action->getRequest();
 
         if ($request->isSecure()) {
-            $action->getResponse()->setRedirect(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK, false) . ltrim($request->getServer('REQUEST_URI'), '/'), 301);
+            $action->getResponse()->setRedirect(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK, false) . ltrim($request->getRequestString(), '/'), 301);
             $action->getRequest()->setDispatched(true);
         }
 
